@@ -14,6 +14,14 @@ public class Products {
 	public Products(String name, double price, int stock) {
 		this.name = name;
 		this.price = price;
+		this.setStock(stock);
+	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
 		this.stock = stock;
 	}
 }

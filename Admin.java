@@ -1,58 +1,60 @@
 package week2Problems;
 
+import java.util.HashSet;
+
 public class Admin {
-	static int y = 5;
+	static int z = 5;
 	static boolean overChecked = false;
 	
-	protected static void startAdmin() {
+	protected static void startAdmin(HashSet<Products> y) {
 		if (overChecked == true) {
-			failed();
+			failed(y);
 		}
 		else {
 		System.out.println("'commands' is currently disabled. Please input your password");
-		password();
+		password(y);
 		}
 	}
 	
-	private static void password() {
+	private static void password(HashSet<Products> y) {
 		String x = Week2Project.input();
-		passwordCheck(x);
+		passwordCheck(x, y);
 	}
 	
-	private static void passwordCheck(String x) {
+	private static void passwordCheck(String x, HashSet<Products> y) {
 		
 		switch(x) {
 		case "12345":
 			System.out.println("Opening administrative controls...");
-			y = 5;
-			adminInterface();
+			z = 5;
+			adminInterface(y);
 			break;
 		default:
-			y -= 1;
-			checkContinue(y);
+			z -= 1;
+			checkContinue(z);
 			if (overChecked == true) {
-				failed();
+				failed(y);
 			}
 			else {
-			System.out.println("Incorrect Password. " + y + " attempts remaining");
-			password();
+			System.out.println("Incorrect Password. " + z + " attempts remaining");
+			password(y);
 			}
 		}
 	}
 	
-	private static void checkContinue(int y) {
-		if (y == 0) {
+	private static void checkContinue(int z) {
+		if (z == 0) {
 			overChecked = true;
 		}
 	}
 	
-	private static void failed() {
+	private static void failed(HashSet<Products> y) {
 		System.out.println("Too many failed attempts. Administrator controls locked out for current session.");
 		System.out.println("Returning...");
-		Week2Project.startStore();
+		Week2Project.startStore(y);
 	}
 	
-	private static void adminInterface() {
+	private static void adminInterface(HashSet<Products> y) {
 		String x = Week2Project.input();
 		switch(x) {
 		case "commands":
@@ -64,7 +66,7 @@ public class Admin {
 			break;
 		case "exit":
 			System.out.println("Returning...");
-			Week2Project.startStore();
+			Week2Project.startStore(y);
 			break;
 		}
 	}

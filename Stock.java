@@ -128,21 +128,36 @@ public class Stock {
 		toReturn.add(A018);
 		toReturn.add(A019);
 		toReturn.add(A020);
+		toReturn.add(A021);
+		toReturn.add(A022);
+		toReturn.add(A023);
+		toReturn.add(A024);
+		toReturn.add(A025);
+		toReturn.add(A026);
+		toReturn.add(A027);
+		toReturn.add(A028);
+		toReturn.add(A029);
+		toReturn.add(A030);
+		toReturn.add(A031);
+		toReturn.add(A032);
+		toReturn.add(A033);
+		toReturn.add(A034);
+		toReturn.add(A035);
+		toReturn.add(A036);
+		toReturn.add(A037);
+		toReturn.add(A038);
+		toReturn.add(A039);
+		toReturn.add(A040);
+		toReturn.add(A041);
+		toReturn.add(A042);
+		toReturn.add(A043);
+		toReturn.add(A044);
+		toReturn.add(A045);
+		toReturn.add(A046);
+		toReturn.add(A047);
+		toReturn.add(A048);
+		toReturn.add(A049);
+		toReturn.add(A050);
 		return toReturn;
 	}
-	
-//	protected static void getType(Category x) {
-//		switch(x) {
-//		case FOOD:
-//			System.out.println(s.FOOD);
-//			break;
-//		case TOOLS:
-//			System.out.println(category.TOOLS);
-//			break;
-//		case MEDICAL:
-//			System.out.println(category.MEDICAL);
-//			break;
-//		default:
-//			System.out.println("Please input a valid category");
-//		}
 }

@@ -122,13 +122,8 @@ bonus: The search should be case- and whitespace-insensitive
 public class Week2Project {
 	public static void main(String[] args) {
 		HashSet<Products> stock = Stock.createStock();
-		for(Products p : stock) {
-			if(p.category == Category.FOOD) {
-				System.out.println(p.name + " $" + p.price);
-			}
-		}
 		System.out.println("To view your available commands at any time type 'commands' into the console");
-		startStore();
+		startStore(stock);
 	}
 	
 	protected static String input() {
@@ -138,25 +133,25 @@ public class Week2Project {
 		return x;
 	}
 	
-	protected static void startStore() {
+	protected static void startStore(HashSet<Products> y) {
 		System.out.println("Would you like to sign in as an administrator?");
 		String x = input();
 		
 		switch(x) {
 		case "yes": 
 			System.out.println("Starting administrator interface...");
-			Admin.startAdmin();
+			Admin.startAdmin(y);
 			break;
 		case "no": 
 			System.out.println("Starting User Store...");
-			User.startUser();
+			User.startUser(y);
 			break;
 		case "commands":
 			System.out.println("Current Available commands are:");
 			System.out.println("Yes");
 			System.out.println("No");
 			System.out.println("Terminate");
-			startStore();
+			startStore(y);
 			break;
 		case "terminate":
 			System.out.println("Shutting down...");
@@ -164,7 +159,7 @@ public class Week2Project {
 			break;
 		default:
 			error();
-			startStore();
+			startStore(y);
 		}
 	}
 	
