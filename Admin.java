@@ -60,8 +60,9 @@ public class Admin {
 		case "commands":
 			System.out.println("View [All/Category/Name/ID"); //They should be allowed to see how many are in stock
 			System.out.println("View [Name/ID] - Stock");
-			System.out.println("View Purchased"); //See all bought items, name/id quanitity
-			System.out.println("View Popular"); //View the bought items from most purchased to fewer numbers. Also display the amount gained from purchases
+			System.out.println("View Purchased"); //See all bought items, name/id quanitity. Also display the amount gained from purchases
+			System.out.println("View Popular"); //View the bought items from most purchased to fewer numbers.
+			System.out.println("Change stock"); //Allows you to change the stock of an item, add an item to be purchased, or remove an item
 			System.out.println("Exit");
 			break;
 		case "exit":

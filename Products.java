@@ -11,17 +11,17 @@ public class Products {
 	private int stock;
 	protected Category category;
 	
-	public Products(String name, double price, int stock) {
+	protected Products(String name, double price, int stock) {
 		this.name = name;
 		this.price = price;
 		this.setStock(stock);
 	}
 
-	public int getStock() {
+	protected int getStock() {
 		return stock;
 	}
 
-	public void setStock(int stock) {
+	protected void setStock(int stock) {
 		this.stock = stock;
 	}
 }

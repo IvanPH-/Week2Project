@@ -1,7 +1,10 @@
 package week2Problems;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 
 import week2Problems.Products.Category;
 
@@ -26,12 +29,11 @@ public class User {
 			//etc etc for categories
 			System.out.println("Sort by [Name/Price/Category]");
 			System.out.println("View cart");
-			System.out.println("Cart remove [item/name/id]"); //When called prompt to remove an amount of them.
+			System.out.println("Cart remove [item name]"); //When called prompt to remove an amount of them.
 			System.out.println("View wallet");
-			//Figure out how to do this part
-			System.out.println("Wallet add [amount]"); 
-			System.out.println("Cart add [item/name/id]");
-			//End of line 30 comment
+			System.out.println("View purchases"); //Show anything that was bought previously, the amount spent, and the amount of item that was purchased
+			System.out.println("Wallet add"); //Prompt for amount to add after 
+			System.out.println("Cart add"); //Prompt for item to add after by name, and then amount to add which will return an error if there isn't enough in stock
 			System.out.println("CheckOut"); //When called give purchaseCount ++
 			System.out.println("Exit");
 			userStore(y);
@@ -94,6 +96,16 @@ public class User {
 		case "view backpacks":
 			getType(y, Category.BACKPACKS);
 			userStore(y);
+			break;
+		case "view all":
+			for(Products p : y) {
+				System.out.println(p.name + " $" + p.price);
+			}
+			userStore(y);
+			break;
+		case "sort by name":
+			List<Products> sortedList = new ArrayList<>(y);
+			
 			break;
 		default:
 			Week2Project.error();
